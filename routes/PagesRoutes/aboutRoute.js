@@ -1,15 +1,13 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express')
+const router = express.Router()
 
-const aboutController = require("../../Controllers/PagesControllers/aboutController")
-router.get('/',aboutController.GetAbout);
+const aboutController = require('../../Controllers/PagesControllers/aboutController')
+router.get('/', aboutController.GetAbout)
 
-router.get('/:id',aboutController.GetAboutById);
+router.get('/:id', aboutController.GetAboutById)
 
-router.post("/",aboutController.PostAbout);
+router.post('/', aboutController.PostAbout)
 
+router.put('/:id', aboutController.PutAbout)
 
-router.put('/:id' ,aboutController.PutAbout);
-
-
-module.exports = router;
+module.exports = router

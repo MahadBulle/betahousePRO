@@ -1,33 +1,33 @@
-const mongoose = require('mongoose');
-let joi = require('joi');
+const mongoose = require('mongoose')
+const joi = require('joi')
 const serviceSchema = new mongoose.Schema({
   Title: {
     type: String,
-    required: true,
+    required: true
   },
   Icon: {
     type: String,
-    required: true,
+    required: true
   },
   Decribtion: {
     type: String,
-    required: true,
-  },
-});
+    required: true
+  }
+})
 
-const serviceModel = mongoose.model('service', serviceSchema);
+const ServiceModel = mongoose.model('service', serviceSchema)
 
 // valiidation
-function serviceValidation(servicetOBj) {
-  let serviceVal = joi.object({
+function serviceValidation (servicetOBj) {
+  const serviceVal = joi.object({
     Title: joi.string().required(),
     Icon: joi.string().required(),
-    Decribtion: joi.string().required(),
-  });
-  return serviceVal.validate(servicetOBj);
+    Decribtion: joi.string().required()
+  })
+  return serviceVal.validate(servicetOBj)
 }
 
 module.exports = {
-  serviceModel,
-  serviceValidation,
-};
+  ServiceModel,
+  serviceValidation
+}

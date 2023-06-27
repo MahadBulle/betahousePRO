@@ -1,33 +1,33 @@
-const mongoose = require('mongoose');
-let joi = require('joi');
+const mongoose = require('mongoose')
+const joi = require('joi')
 const contactSchema = new mongoose.Schema({
   Name: {
     type: String,
-    required: true,
+    required: true
   },
   Phone: {
     type: Number,
-    required: true,
+    required: true
   },
   Message: {
     type: String,
-    required: true,
-  },
-});
+    required: true
+  }
+})
 
-const contactModel = mongoose.model('Contact', contactSchema);
+const ContactModel = mongoose.model('Contact', contactSchema)
 
 // validation
-function contactValidation(contactObj) {
-  let contactVal = joi.object({
+function contactValidation (contactObj) {
+  const contactVal = joi.object({
     Name: joi.string().required(),
     Phone: joi.number().required(),
-    Message: joi.string().required(),
-  });
-  return contactVal.validate(contactObj);
+    Message: joi.string().required()
+  })
+  return contactVal.validate(contactObj)
 }
 
 module.exports = {
-  contactModel,
-  contactValidation,
-};
+  ContactModel,
+  contactValidation
+}

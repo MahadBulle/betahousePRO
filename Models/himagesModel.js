@@ -1,30 +1,22 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose')
 const himagesSchema = new mongoose.Schema({
-    houseId : {
-        type: mongoose.Schema.Types.ObjectId,
-        ref:"Houses",
-        required: true
-    },
-    images : {
-        type: String,
-        required: true,
-    },
-    userId : {
-        type: mongoose.Schema.Types.ObjectId,
-        ref:"Users",
-        required: true
-    }
-  
+  houseId: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Houses',
+    required: true
+  },
+  images: {
+    type: String,
+    required: true
+  },
+  userId: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Users',
+    required: true
+  }
 
-},{timestamps:true})
+}, { timestamps: true })
 
-const himagesModel =mongoose.model("Himages",himagesSchema)
+const HimagesModel = mongoose.model('Himages', himagesSchema)
 
-//----------------------------------------------------------------
-
-
-
-
-
-module.exports = himagesModel
-
+module.exports = HimagesModel

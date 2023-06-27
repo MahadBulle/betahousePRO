@@ -1,28 +1,28 @@
-const mongoose = require('mongoose');
-let joi = require('joi');
+const mongoose = require('mongoose')
+const joi = require('joi')
 const aboutSchema = new mongoose.Schema({
   Description: {
     type: String,
-    required: true,
+    required: true
   },
   ShortDescription: {
     type: String,
-    required: true,
-  },
-});
+    required: true
+  }
+})
 
-const aboutModel = mongoose.model('About', aboutSchema);
+const AboutModel = mongoose.model('About', aboutSchema)
 
 // validation
-function aboutValidation(aboutObj) {
-  let aboutval = joi.object({
+function aboutValidation (aboutObj) {
+  const aboutval = joi.object({
     Description: joi.string().required(),
-    ShortDescription: joi.string().required(),
-  });
-  return aboutval.validate(aboutObj);
+    ShortDescription: joi.string().required()
+  })
+  return aboutval.validate(aboutObj)
 }
 
 module.exports = {
-  aboutModel,
-  aboutValidation,
-};
+  AboutModel,
+  aboutValidation
+}

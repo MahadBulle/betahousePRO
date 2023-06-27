@@ -1,74 +1,72 @@
-const mongoose = require('mongoose');
-let joi = require('joi');
+const mongoose = require('mongoose')
 const HomeSettingSchema = new mongoose.Schema({
   Title: {
     type: String,
-    required: true,
+    required: true
   },
   name: {
     type: String,
-    required: true,
+    required: true
   },
   location: {
     type: String,
-    required: true,
+    required: true
   },
   logo: {
     type: String,
-    required: true,
+    required: true
   },
   email: {
     type: String,
-    required: true,
+    required: true
   },
   Complaint_Email: {
     type: String,
-    required: true,
+    required: true
   },
   Complaint_Phone: {
     type: Number,
-    required: true,
+    required: true
   },
   facebook: {
     type: String,
-    required: true,
+    required: true
   },
   tiktok: {
     type: String,
-    required: true,
+    required: true
   },
   twitter: {
     type: String,
-    required: true,
+    required: true
   },
   instagram: {
     type: String,
-    required: true,
+    required: true
   },
   HeroTitle: {
     type: String,
-    required: true,
+    required: true
   },
   HeroDescription: {
     type: String,
-    required: true,
+    required: true
   },
   heroImage: {
     type: String,
-    required: true,
+    required: true
   },
   footerText: {
     type: String,
-    required: true,
-  },
-  userId : {
-    type: mongoose.Schema.Types.ObjectId,
-    ref:"Users",
     required: true
-}
-});
+  },
+  userId: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Users',
+    required: true
+  }
+})
 
+const HomeSettingModel = mongoose.model('HomeSetting', HomeSettingSchema)
 
-const HomeSettingModel = mongoose.model('HomeSetting', HomeSettingSchema);
-
-module.exports = HomeSettingModel;
+module.exports = HomeSettingModel
