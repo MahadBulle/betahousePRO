@@ -1,4 +1,4 @@
-const app = require('../../app')
+const app = require('../..')
 const request = require('supertest')
 // test houses api
 //  describe('testing houses api crud operations', function () {
