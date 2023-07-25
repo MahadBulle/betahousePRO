@@ -1,6 +1,6 @@
 const express = require('express')
 const mongoose = require('mongoose')
-const { MongoMemoryServer } = require('mongodb-memory-server-core')
+// const { MongoMemoryServer } = require('mongodb-memory-server-core')
 
 const housesRoutes = require('./routes/housesRoutes')
 const usersRoutes = require('./routes/usersRoutes')
@@ -26,18 +26,18 @@ app.use('/about', aboutRoutes)
 app.use('/contact', contactRoutes)
 app.use('/services', servicesRoutes)
 
-// mongoose.set('strictQuery', false)
+mongoose.set('strictQuery', false)
 // mongoose.connect('mongodb://127.0.0.1:27017/BetaHouse')
-// // mongoose.connect('mongodb+srv://generator:HkAXEuNAexSC358T@cluster0.fonguby.mongodb.net/invoicegenerator')
-//   .then(() => console.log('Connected!'));
-const connectiondb = async () => {
-  const createServer = await MongoMemoryServer.create()
-  await mongoose.connect(createServer.getUri(), { dbName: 'Betahouse' })
-    .then(() => console.log('Connected!')).catch((err) => {
-      console.log(err)
-    }
-    )
-}
-connectiondb()
+mongoose.connect('mongodb+srv://generator:HkAXEuNAexSC358T@cluster0.fonguby.mongodb.net/invoicegenerator')
+  .then(() => console.log('Connected!'));
+// const connectiondb = async () => {
+//   const createServer = await MongoMemoryServer.create()
+//   await mongoose.connect(createServer.getUri(), { dbName: 'Betahouse' })
+//     .then(() => console.log('Connected!')).catch((err) => {
+//       console.log(err)
+//     }
+//     )
+// }
+// connectiondb()
 
 module.exports = app
