@@ -1,5 +1,6 @@
 const express = require('express')
 const mongoose = require('mongoose')
+const cors = require('cors');
 // const { MongoMemoryServer } = require('mongodb-memory-server-core')
 
 const housesRoutes = require('./routes/housesRoutes')
@@ -15,6 +16,7 @@ const servicesRoutes = require('./routes/PagesRoutes/ourServicesRoute')
 const app = express()
 
 app.use(express.json())
+app.use(cors());
 
 app.use('/houses', housesRoutes)
 app.use('/users', usersRoutes)
