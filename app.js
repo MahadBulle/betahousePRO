@@ -12,9 +12,7 @@ const ourClientRoutes = require('./routes/PagesRoutes/ourClientRoute')
 const aboutRoutes = require('./routes/PagesRoutes/aboutRoute')
 const contactRoutes = require('./routes/PagesRoutes/contactRout')
 const servicesRoutes = require('./routes/PagesRoutes/ourServicesRoute')
-app.get('/',(req, res) => {
-  res.send("wuu shaqayna")
-})
+
 
 const app = express()
 
@@ -31,10 +29,15 @@ app.use('/about', aboutRoutes)
 app.use('/contact', contactRoutes)
 app.use('/services', servicesRoutes)
 
+
 mongoose.set('strictQuery', false)
 // mongoose.connect('mongodb://127.0.0.1:27017/BetaHouse')
 mongoose.connect('mongodb+srv://generator:HkAXEuNAexSC358T@cluster0.fonguby.mongodb.net/invoicegenerator')
   .then(() => console.log('Connected!'));
+  
+  app.get('/',(req, res) => {
+    res.send("wuu shaqayna")
+  })
 // const connectiondb = async () => {
 //   const createServer = await MongoMemoryServer.create()
 //   await mongoose.connect(createServer.getUri(), { dbName: 'Betahouse' })
