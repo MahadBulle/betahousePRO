@@ -1,7 +1,8 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const cors = require('cors');
-// const { MongoMemoryServer } = require('mongodb-memory-server-core')
+// const { MongoMemoryServer } = require('mongodb-memory-server-core'
+require('dotenv').config();
 
 const housesRoutes = require('./routes/housesRoutes')
 const usersRoutes = require('./routes/usersRoutes')
@@ -34,10 +35,13 @@ mongoose.set('strictQuery', false)
 // mongoose.connect('mongodb://127.0.0.1:27017/BetaHouse')
 mongoose.connect('mongodb+srv://generator:HkAXEuNAexSC358T@cluster0.fonguby.mongodb.net/invoicegenerator')
   .then(() => console.log('Connected!'));
-  
+
   app.get('/',(req, res) => {
     res.send("wuu shaqayna")
   })
+  const Port = process.env.PORT
+  app.listen(Port);
+  console.log("welocme",Port);
 // const connectiondb = async () => {
 //   const createServer = await MongoMemoryServer.create()
 //   await mongoose.connect(createServer.getUri(), { dbName: 'Betahouse' })
