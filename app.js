@@ -12,6 +12,9 @@ const ourClientRoutes = require('./routes/PagesRoutes/ourClientRoute')
 const aboutRoutes = require('./routes/PagesRoutes/aboutRoute')
 const contactRoutes = require('./routes/PagesRoutes/contactRout')
 const servicesRoutes = require('./routes/PagesRoutes/ourServicesRoute')
+app.get('/',(req, res) => {
+  res.send("wuu shaqayna")
+})
 
 const app = express()
 
